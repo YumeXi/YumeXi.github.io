@@ -1,0 +1,12 @@
+<style>
+  body:has(input[value="yume"]:checked) {
+    ul {
+      list-style-type: square;
+    }
+    #theme-options:has(> theme-option:nth-of-type(1):last-of-type) {
+      display: none;
+    }
+  }
+</style>
+
+<theme-option name="yume">yume</theme-option>
