@@ -101,8 +101,6 @@ page-title: Roadmap
 
 ###  宏
 
-#### 研究
-
 - [ ] 一等宏
 - [ ] 嵌入式卫生宏
 
@@ -131,21 +129,25 @@ page-title: Roadmap
 - [ ] Proper Tail Recursion
 - [ ] 废料收集（及其嵌入）
 
-###  研读
+### 研读
 
 - [ ] 线性/仿射类型
 - [ ] 借用检查
 - [ ] 模态
 
+### 其他
+
+- [ ] 代际引用
+
 ## 构建
 
 ###  构建系统
 
-- [ ] Nix/Guix
+- [ ] Nix/Guix（可重现性）
 
-### 编译
+## 编译
 
-###  解析
+### 解析
 
 - [ ] 增量解析
 - [ ] 解析器组合子
@@ -158,13 +160,12 @@ page-title: Roadmap
 - [ ] Nanopass Languages
 - [ ] Trees that grows
 
-###  部分求值
+### 部分求值
 
 ### 增量编译
 
 ### 研读
 
-- [ ] 
 - [ ] Scope Graphs
 
 ## 编辑器
