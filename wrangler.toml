@@ -1,2 +1,8 @@
 name = "yumexi"
-pages_build_output_dir = "./publish"
+# main = "src/index.js"
+compatibility_date = "2026-07-01"
+assets = { directory = "./publish" }
+
+[build]
+command = "PATH=\"$PATH:$HOME/.cargo/bin/\" kodama build --no-cache" 
+watch_dir = ["trees", "assets"]
