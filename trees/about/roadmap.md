@@ -36,11 +36,16 @@ page-title: Roadmap
 ### 模块
 
 - [ ] 一等模块
+- [ ] 链接
 
 ### 接口
 
 - [ ] FFI
 - [ ] ABI
+
+### 错误模型
+
+- [ ] 错误**类型**
 
 ## 演算
 
@@ -50,7 +55,10 @@ page-title: Roadmap
 - [ ] 指称语义
 - [ ] 抽象机
   - SECD, CEK, CESK, ...
-
+- [ ] 名称处理
+  - [x] Barendget's Convention
+  - [ ] De Brujin index
+  - [ ] Locally nameless
 ### 求值策略
 
 - [ ] Call by value
@@ -63,6 +71,9 @@ page-title: Roadmap
 
 - [ ] 性质
 - [ ] 证明方法
+  - 比如 Logical Relations
+- [ ] 改进的大步操作语义
+  - **注**：最近的成果主要是 Big-Stop Semantics，另一方面是用于非确定性的 Omnisemantics
 
 ### Lambda Calculus
 
@@ -70,6 +81,11 @@ page-title: Roadmap
 - [ ] Closure Calculus
 - [ ] Explicit Substitutions
 - [ ] First-class Environments
+- [ ] Vau Calculus
+
+### 其他
+
+- [ ] Semantic Lifting
 
 ## 逻辑
 
@@ -84,6 +100,7 @@ page-title: Roadmap
 
 ### 进阶
 
+- [ ] Set-theoretic types
 - [ ] Hindley-Milner 类型系统
 - [ ] 双向类型系统
 - [ ] 渐进类型
@@ -91,11 +108,12 @@ page-title: Roadmap
 ### 研读
 
 - [ ] 类型精化（Elaboration Zoo）
-- [ ] 不相交多态
+- [ ] Disjoint Polymorphism
+- [ ] 语义子类型
 - [ ] 动态语言类型推断
 - [ ] 代数子类型
 
-###  数据类型
+### 数据类型
 
 - [ ] Abstract DTs
 - [ ] ADT/Inductive Type
@@ -111,24 +129,33 @@ page-title: Roadmap
 
 - [ ] Adapton
 
+### 自动机
+
 ### 续延/代数式副作用
 
-### 基础
+#### 基础
 
 - [ ] 无界/有界续延
   - [ ] CPS Translation
 - [ ] Effects/Coeffects
+- [ ] Monads
+  - [ ] Monad Transformers
+  - [ ] Free Monads
 
 #### 研读
 
 - [ ] Sequent Calculus
   - [ ] Polarization
 - [ ] Generalized Evidence Passing
+- [ ] Named Effect Handlers
 - [ ] Scoped Effects
+- [ ] Bidirectional Effects
 
 #### 其他
 
 - [ ] 模态效应类型
+- [ ] Modular Models of Monoids
+- [ ] Bidirectional Programming
 
 ## 抽象理论
 
@@ -144,25 +171,27 @@ page-title: Roadmap
 
 - [ ] 一等宏
 - [ ] 嵌入式卫生宏
-- [ ] Type Systems as Macros
+- [ ] (Dependent) Type Systems as Macros
 
 #### 宏定型
 
 - [ ] Type Resugaring/Lifting
 
-###  Staging
+### Staging
 
 ## 文法
 
-###  基础
+### 基础
 
 - [ ] CFG
 - [ ] PEG
-- [ ] Chumsky Grammar 
+- [ ] Chumsky Grammar
 
 ###  可拓展文法
 
 - [ ] Attribute Grammar
+  - [ ] Nanopass Attribute Grammar
+  - **注**：~~实际上好像不记得是不是了...~~
 - [ ] Recursive Adaptive Grammar
 
 ## 资源管理
@@ -174,6 +203,8 @@ page-title: Roadmap
 - [ ] 内存模型
 - [ ] Proper Tail Recursion
 - [ ] 废料收集（及其嵌入）
+- [ ] 引用计数
+  - [ ] Perceus
 
 ### 研读
 
@@ -196,6 +227,8 @@ page-title: Roadmap
 ### 基础
 
 - [ ] 基本块
+- [ ] 单态化
+- [ ] CPS Transformation
 
 ### 解析
 
@@ -236,24 +269,48 @@ page-title: Roadmap
 
 - [ ] Debugging
 
+## 定理证明
+
+### 基础
+
+- [ ] HOL
+- [ ] SMT
+- [ ] ITP
+  - [ ] Lean4
+  - [ ] Coq/Rocq
+
+### 研读
+
+- [ ] 霍尔逻辑，时序逻辑，分离逻辑
+
 ## 函术珠玑
 
 ### 程序合成
 
 ### Pretty Printing
 
-###  表达式问题
+- [ ] The Algebra of Pretty Printing
+
+### 表达式问题
 
 - [ ] Datatypes a la carte
 - [ ] Tagless final
 - [ ] Trees that grow
 
-###  可重放性
+### 可重放性
 
 - [ ] Lisp image
 
-# 操作系统
+## 操作系统
 
-## 安全
+### 安全
 
 - [ ] 能力
+
+### 其他
+
+- [ ] Lisp OS[^3]
+
+[^3]: http://metamodular.com/lispos.pdf
+
+## 图形界面
