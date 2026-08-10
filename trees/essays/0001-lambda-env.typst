@@ -1,0 +1,72 @@
+#import "../_lib/kodama.typ": *
+#import "@preview/equate:0.3.3": *
+#import "@preview/frame-it:2.0.0": *
+
+#show: equate
+#show: kodama
+
+#set text(font: "New Computer Modern Math", lang: "zh")
+
+#set page(numbering: "1")
+
+#metadata((
+  "title": $lambda$ + "-calculus with enviornments",
+  "page-title": "λ with environments",
+  date: "2026 年 8 月 2 日",
+  author: local("/about/hopo/index", text: "燎原火魄"),
+  status: "draft",
+))
+
+#let (example, ..) = frames(example: ("Example", ))
+#show: frame-style(styles.boxy)
+
+#let l_c = $lambda$ + "-calculus"
+
+= 摘要
+
+绝大部分 #l_c 的直接变体使用代换来表示值的代入行为，然而它并不贴合人们使用环境或符号表的实践。除此之外，对重复变量名的简化处理（Barendregt's Convention）虽然在纸面证明上可以接受，但是却不能优雅地用于机械化证明，还有烦人的#[代换引理]。本文比较两种不同的基于的环境的形式化方法，一种依然依赖代换，但可以更好的建模复杂的环境；另一种完全消除了代换，并且被证明完全适于建模 STLC，同时还有大步语义和较为简单的机械化证明。本文所述的两种方法都支持（并且不依赖于）一等环境。最后，本文尝试结合这两种方法的优点。
+
+= Part I: $lambda_E$-calculus
+
+#let rules = (..rules) => {
+  return rules.pos().join(linebreak())
+}
+
+#definition(numbering: "1.", title: "LambdaE", slug: "lambdaE-semantics")[
+  Syntax:
+  $
+    i & in "Integers" \
+    e & ::= {} | { l = V } | e_1, e_2 " " & ("Environments") \
+    V & ::= i | e | ⟨e, λ e.T⟩ " " & ("Values") \
+    T & ::= e_? | V | λ e.T | T_1 gt.closed T_2 | T_1" "T_2 | T_1,T_2 | { l = T } | T.l " " & ("Terms") \
+    E & ::= ballot | E.l | E,T | E" "T | V" "T | E gt.closed T | { l = E } " " & ("Evaluation contexts")
+  $
+  Syntactic sugars:
+  $
+    l & eq.def e_?.l \
+    { l_1 = T_1, l_2 = T_2 } & eq.def { l_1 = T_1 }, { l_2 = T_2 }
+  $
+  Semantics:
+  $
+    {l = V}.l |-> V \
+    (e_1, e_2).l |-> V "iff" e_1.l |-> V \
+    (e_1, e_2).l |-> V "iff" e_2.l |-> V \
+  $ <le:proj> // Note that i need to handle the dup case later
+  #share-align[
+    $ e & tack e_? |-> e $ <le:current-env>
+    $ e_1 & tack lambda e_2.T |-> chevron lambda e_2. T, e_1 chevron.r $ <le:closure>
+    $ e & tack V_1 gt.closed V_2 |-> V_2 $ <le:box-v>
+    后略
+  ]
+]
+
+总体上来说，这里给出的语义与原论文没有太大差异，介绍如下：
+- $"Types"$. 这里并没有给出任何类型，但是原论文的定型规则实际上支持了一个简单类型（因而也更受限）的 #l_c。 我们选择这么做是为了简洁明了（引入简单类型很容易），并且为后文的演算做准备。
+- $"Environments"$. 尽管原论文的环境同时支持 de Brujin index 和具名变量，并且更侧重于 de Brujin index，使其类似于元组与记录的混合体。但是我们选择反其道而行之，从中略去 de Brujin index，让它更贴近现实模型（（实际上与现实语言依然有一定距离））。这也与后文另一种演算的方案更加一致。
+- $"Values"$. (1.) 包含了整数，环境和闭包。因为变量具名通常是有意义的，并且直接支持环境，因此闭包不需要也不支持 $alpha"-renaming"$。(2.) 实际上与 $"Terms"$ 有语法重合（可通过取消语法导向的合并操作而使用语义函数，引入行多态来避免）。
+- $"Terms"$. 值得解释的项如下：
+  - $e_?$ 会获取当前环境。
+  - $T_1 gt.closed T_2$ 以（如果是环境）T_1 为上下文规约 T_2。
+  - $T_1, T_2$ 表示尝试规约两个项为环境并将它们合并。
+
+现在让我们观察一些在经典 #l_c 中需要繁重的代换的例子：

@@ -1,0 +1,79 @@
+#import "../_lib/kodama.typ": *
+
+#show: kodama
+
+#set text(font: "New Computer Modern Math", lang: "zh")
+
+#set heading(numbering: "1.")
+
+#metadata((
+  "title": $lambda$ + "-calculus, explicit evaluated",
+  "page-title": "λ, explicit evaluated",
+  date: "2026 年 8 月 2 日",
+  author: local("/about/hopo/index", text: "燎原火魄"),
+  status: "draft"
+))
+
+#let l_c = $lambda$ + "-calculus"
+#let l_cv = $lambda_v$ + "-calculus"
+#let l_abs = $lambda$ + "-抽象"
+
+= 摘要 <summary>
+
+最原始的几种 #l_c，无论采取何种求值策略，都不在语法上显式区分#[待求值的]表达式与#[不求值的]表达式。用特殊的项来标记不求值的表达式被称为#[隐式求值]。与之相对的，使用特殊项表示待求值的表达式可被称为#[显式求值]。我们首先描述了一个显式求值版本的 #l_cv，证明它与原演算的等价性。之后，我们进一步研究何以将显式求值应用到抽象机以及大步语义之上。最后，本文讨论显式求值对重写系统的潜在优势。本文附录给出了相关的 PLT Redex 源代码，以作参考之用。
+
+= 导言
+
+对于本文所研究的项重写系统，我们实际上感兴趣的是#[操作语义]对值的处理。所以每个形式系统都会有以下几个语法类别：#[上下文（$C$）] 和#[求值上下文（$E$）]，以及#[值（$V$）]。我们对此给出#[操作等价性]的形式化定义：
+
+#let opsteps = "↦*"
+#let opeq = $≅$
+
+
+#definition(numbering: "1.", title: "操作等价性", slug: "operational-equivlance")[
+  $T_1 opeq T_2 eq.def C[T_1] opsteps V "iff" C[T_2] opsteps V $] <def:op-eq>
+
+我们假设读者已有 #l_cv 的若干相关基础，因此我们直接给出：
+
+#definition(numbering: "1.", title: "call-by-value", slug: "lambda-semantics")[
+Syntax:
+$
+x in "Variables"
+#linebreak()
+V ::= lambda x. T " " ("Values")
+#linebreak()
+T ::= x | (T" "T) " " ("Terms")
+#linebreak()
+E ::= ballot | (V E) | (E" "T) " " ("Evaluation contexts")
+$
+Semantics:
+$
+E[(λ x.T)V] ↦ E[T[x := V]]
+$
+] <def:cbv>
+
+#let note1 = footnote[一个项并非待求值项并不意味着无法用它规约了，即，该项不一定是范式（Normal Form），被标记会让它转化成可约项（Redex）。]
+
+可以发现，就 #l_cv 而言，所有的项都是将求值的，因此不存在评估形式的区分。然而，我们感兴趣的是一个可用于实用编程语言的语义模型，所以尽管 #l_c 在数学上很重要，但是我们需要对它做些扩展。
+
+如果你长期浸淫在 Rust 或 Lisp (无论是 Common Lisp, Scheme 还是 Racket) 这样的语言里，可能已经意识到了 #quote[不求值] 意味着什么：这往往是宏的特征。但是事实并非总是如此，所以让我们展示一下一个显式求值的 #l_c 如何将 #quote[待求值项 #note1]  区分开来。
+
+#definition(numbering: "1.", title: "explicit evaluation", slug: "explicit-evaluation")[
+Syntax:
+$
+x in "Variables"
+#linebreak()
+O ::= chevron lambda x. T chevron.r " " ("Operatives")
+#linebreak()
+V ::= O " " ("Values")
+#linebreak()
+A ::= ["combine" T" "T] " " ("Active terms")
+#linebreak()
+T ::= x | V | A " " ("Terms")
+#linebreak()
+E ::= ballot | ["combine" E" "T] " " | ["combine" V" "E] " " ("Evaluation contexts")
+$
+Reduction:
+$
+["combine" chevron lambda x.T chevron.r" "V] → T[x := V]
+$] <def:explicit-eval-cbv>

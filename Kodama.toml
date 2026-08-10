@@ -12,6 +12,7 @@ mobile-sticky = true
 max-width = "45ex"
 
 [text]
+edit = "[edit]"
 toc = "Table of Contents"
 references = "References"
 backlinks = "Backlinks"
