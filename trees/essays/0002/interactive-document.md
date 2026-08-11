@@ -22,6 +22,7 @@ status: flying
 - [实验性的 The Rust Programming Language](https://rust-book.cs.brown.edu/)
   - 提供了`测验`和`注记`。
 - 以代码块形式嵌入的 Language Playground。
+- 展开/收起一个区域也许也是交互性文档的一部分，谁说不是呢（笑）？
 
 # 参考
 
