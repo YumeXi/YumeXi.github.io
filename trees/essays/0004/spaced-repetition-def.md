@@ -1,6 +1,7 @@
 ---
-title: 定义：间隔重复系统
-page-title: 定义：间隔重复系统
+title: 间隔重复系统
+page-title: 间隔重复系统
+taxon: Def
 ---
 
 1. 一个微任务的优先队列

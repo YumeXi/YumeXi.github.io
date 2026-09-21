@@ -4,9 +4,10 @@ page-title: 间隔重复系统
 date: 2026 年 9 月 21 日
 author: [燎原火魄](../about/hopo/index.md)
 status: comment
+asref: true
 ---
 
-在 [Spaced repetition systems can be used to program attention](https://notes.andymatuschak.org/zB92WZZ5baBHKZPPbWMbYEv) 中，Andy 指出间隔重复系统可以推广为如下步骤：
+在 [Spaced repetition systems can be used to program attention](https://notes.andymatuschak.org/zB92WZZ5baBHKZPPbWMbYEv) 中，[Andy Matuschak](../persons/andymatuschak.md) 指出间隔重复系统可以推广为如下步骤：
 
 [+](./0004/spaced-repetition-def.md#:embed)
 
@@ -17,8 +18,8 @@ status: comment
 - 我认为反馈—调整优先级的确很重要。我少有一直占领高优先度的事情，而想法总是在不同的事情间流动。比如说，我经常随着阅读时长的增长分散我的注意力（即使把阅读这本书作为我的高优先级任务），最终把还没燃尽但是已经不能再在这本书上燃烧的热情转移去做别的事情。
   - 注：我对他也许会写的[**增量阅读**](https://notes.andymatuschak.org/zHwr5v9VJGX3MzHyzz4V8wt)很感兴趣，这也是一个可达的主题。
 
-我的尝试也尽量遵循常青笔记的理念，甚至可以说我正以常青笔记为中心来展开我对间隔重复的尝试。不过把思维**链**串联着的的东西拆成原子并非易事。因此，存在一些失活的树木又何尝是一种大错呢？我采用间隔重复的动机也有我希望保持对事物多样化（有些可以说八竿子打不着）的兴趣，这并非一种功利化的行为，毕竟我也不奢求每个短暂迸发的兴趣之芽都能长期成长。但是，说不定它们滋养了未来的树木呢。
+我的尝试也尽量遵循[常青笔记](./0005/evergreen-notes-def.md)的理念，甚至可以说我正以常青笔记为中心来展开我对间隔重复的尝试。不过把思维**链**串联着的的东西拆成原子并非易事。因此，存在一些失活的树木又何尝是一种大错呢？我采用间隔重复的动机也有我希望保持对事物多样化（有些可以说八竿子打不着）的兴趣，这并非一种功利化的行为，毕竟我也不奢求每个短暂迸发的兴趣之芽都能长期成长。但是，说不定它们滋养了未来的树木呢。
 
-关于本评注，我可以说对间隔重复的兴趣从前不久我读到它的时候就已经扎根了，但只在我脑子里形成了初步的想法。现在我才把它转化为具有一定可读性（和常青）的东西，如果按 [Andy](./0004/quote1.md) 和 Jon Sterling 的话来说，也许我就是在种树了 : )
+关于本评注，我可以说对间隔重复的兴趣从前不久我读到它的时候就已经扎根了，但只在我脑子里形成了初步的想法。现在我才把它转化为具有一定可读性（和常青）的东西，如果按 [Andy Matuschak](./0004/quote1.md) 和 [Jon Sterling](../persons/jonsterling.md) 的话来说，也许我就是在种树了 : )
 
 说不定我对常青的理解（**持续生长**）和我对**可扩展性**的迷恋（以及对跳进兔子洞去**持续探索**的冲动）有所共通之处呢？看来我得把这个加进我的卡盒里了。

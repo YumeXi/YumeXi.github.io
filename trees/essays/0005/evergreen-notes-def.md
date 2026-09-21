@@ -1,0 +1,10 @@
+---
+title: 常青笔记
+page-title: 常青笔记
+asref: true
+taxon: Def
+---
+
+> Evergreen notes are written and organized to evolve, contribute, and accumulate over time, across projects. This is an unusual way to think about writing notes: Most people take only transient notes. That’s because these practices aren’t about writing notes; they’re about effectively developing insight: “Better note-taking” misses the point; what matters is “better thinking”. When done well, these notes can be quite valuable: Evergreen note-writing as fundamental unit of knowledge work.
+
+常青笔记常被写下并整理起来，它们随时间成长，深化与积累，贯穿一个个项目。这种记笔记的方式不同寻常：大部分人只做瞬时的笔记，但做常青笔记是为了挖掘洞察力，[使其随笔记一起发展](./evergreen-notes-def#此句无相应原文-为译者理解)，而非单调的记录——「更好地做笔记」不是关键，「更好地思考」才是。如果执行得当，这些笔记可以充满价值：所以，将常青笔记作为知识工作的基本单元。
