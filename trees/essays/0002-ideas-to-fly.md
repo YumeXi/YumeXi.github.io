@@ -1,7 +1,7 @@
 ---
 title: 让灵感飞
 page-title: 让灵感飞
-date: "2026 年 8 月 6 日"
+date: 2026 年 8 月 6 日
 author: [燎原火魄](../about/hopo/index.md)
 status: flying
 ---
