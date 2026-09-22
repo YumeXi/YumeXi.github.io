@@ -29,3 +29,14 @@
 - 倘若创作者只是依托人工智能来表达*自己的核心思想*，用来润色词句，寻找可信证据，不消说，那真是再好不过了。
 对笔者而言，我们尝试以#local("/essays/0005-evergreen-notes", text: "常青笔记")的方式写作是一种*对自身的智力挑战*，在没有需要人工智能#footnote[往往特指大语言模型。]辅助润色的有效产出的情况下，我们情愿不让第三方直接介入自己的挑战。这就是我们承诺的原因。
 ]
+
+实际上，笔者也有其他利益相关之处：笔者自小钟爱阅读，虽天资愚钝，无所领悟，却十分享受与作者思想交互的过程。但在许多情况下，大语言模型几乎完全破坏了这种感觉。这种感觉也并非我一人独有，可参见：
+
+#subtree(taxon: "Context", title: "读者可能想知道的背景信息")[
+  - #external("https://blog.colinbreck.com/i-dont-want-to-read-what-you-didnt-write/")[*I Don’t Want to Read What You Didn’t Write*]
+
+  - #external("https://bcantrill.dtrace.org/2026/09/05/the-revolt-of-the-reader/")[*The revolt of the reader*]]
+
+垃圾信息并非大语言模型所独创，且大语言模型同样具有输出优质信息的能力，但现实是这抵不过垃圾输出泛滥的速度。
+
+因此，在此，本声明在不反对人工智能发展的意义上，怀着对那种充满生命气息的阅读体验的憧憬，鼓励每一位愿意跟真实的作者（他们往往也是读者）交互的读者——「*保卫我的生活！*」
