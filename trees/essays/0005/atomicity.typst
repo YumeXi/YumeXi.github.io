@@ -1,0 +1,25 @@
+#import "../../_lib/kodama.typ": *
+
+#metadata((
+  "title": "常青笔记，其原子性",
+  "page-title": "常青笔记，其原子性",
+  date: "2026 年 9 月 22 日",
+  author: local("/about/hopo/index", text: "燎原火魄"),
+  status: "draft",
+  taxon: "Def"
+))
+
+- #external("https://notes.andymatuschak.org/zNUaiGAXp21eorsER1Jm9yU")[Andy Matuschak] 和 #external("https://www.forester-notes.org/tfmt-0007/")[Jon Sterling] 都重视常青笔记的原子性，要实现这一点，离不开概念在笔记中的核心地位。
+
+因此，笔记既要自成一体，又要留下开放性：
+
+#remark(title: "笔记作为自含与开放的矛盾体", slug: "openness-vs-self-containment-of-notes", numbering: true)[
+- 笔记需要详述概念对象，尽管这是一个长期过程
+- 概念对象被上下文化，用恰当的背景信息丰富起来
+- 这些上下文构成层次结构，并一同形成一个新的整体
+- 整体可能需要对概念的重新编排，这反过来要求原子性
+]
+
+当概念能在最少的背景下最大化信息，读者定能对其意义有自己的理解，并在更大的整体中不断重新思考这种意义。循此，我直接译出 #external("https://www.forester-notes.org/tfmt-0008/")[Jon Sterling 对实现原子性的见解]。
+
+#embed("./achieving-atomicity", "实现原子性", numbering: true)

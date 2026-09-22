@@ -1,0 +1,21 @@
+#import "../../_lib/kodama.typ": *
+
+#metadata((
+  "title": "实现原子性",
+  "page-title": "实现原子性",
+  author: local("/person/jonsterling", text: "Jon Sterling"),
+  taxon: "Remark"
+))
+
+1. 无自由变量：不要依赖那些在层级上游中随便定义的一次性对象；将它们转化为可以链接的原子节点。
+
+2. 明确依赖关系：每当使用那些已在其他地方定义过的术语或表达方式时，请链接；
+
+3. 符号表示应该易于理解：所有符号表示（除了最基础的那些外）都应该可以通过链接来回忆。
+
+#remark(taxon: "Origin", open: false, catalog: false, slug: "archieving-atomicity-origin")[
+1. no free variables: do not rely on one-off objects that are defined incidentally upwards in the hierarchy; turn them into atomic nodes that can be linked;
+
+2. favor explicit dependency: whenever using a terminology or construction that has been defined elsewhere, link it;
+
+3. notation should be decodable: all notations (except the most very basic) should be recalled via a link.]
