@@ -9,3 +9,4 @@ taxon: Essays
 [-](./0002-ideas-to-fly.md#:embed)
 [-](./0004-spaced-repetition.md#:embed)
 [-](./0005-evergreen-notes.typst#:embed)
+[-](./0006-note-naming-and-permalinks.typst#:embed)

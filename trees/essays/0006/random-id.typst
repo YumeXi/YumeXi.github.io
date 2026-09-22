@@ -1,0 +1,11 @@
+#import "../../_lib/kodama.typ": *
+
+#metadata((
+  "title": "随机标识符",
+  "page-title": "随机标识符",
+  date: "2026 年 9 月 22 日",
+  author: local("/about/hopo/index", text: "燎原火魄"),
+  asref: true
+))
+
+随机标识符完全与文本解藕，并且允许全局唯一，自带恒链接属性。#external("https://en.wikipedia.org/wiki/Universally_unique_identifier")[UUID v4] 堪称随机标识符的典范。

@@ -1,0 +1,11 @@
+#import "../../_lib/kodama.typ": *
+
+#metadata((
+  "title": "语义化命名",
+  "page-title": "语义化命名",
+  date: "2026 年 9 月 22 日",
+  author: local("/about/hopo/index", text: "燎原火魄"),
+  asref: true
+))
+
+语义化命名是最易读，易辨识的方法，更适合人类宝宝体质。其精髓在于命名是对文本（至少其主题）的概述。这种方法还可以一同确定文件名，但其缺点在于，文本的内容常非一成不变，作者也可能在写作中改变标题及文件名，因而常常希望在定稿前保持其#local("./private-notes", text: "私有")。
