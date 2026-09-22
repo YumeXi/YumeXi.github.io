@@ -9,3 +9,5 @@ taxon: About
 - [+愿景](./vision.md#:embed)
 
 - [-成员](./members.md#:embed)
+
+- [对 AI 声明](../ai.typst#:embed)
