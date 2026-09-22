@@ -19,7 +19,7 @@
 
 日积月累之下，在一个新写作项目下（我相信如果你决心要开始这个项目，它的主题往往已与你是老友了），我们就不用从零开始，转而可以观察现有相关文本的关联。我们可以重新编辑，组合现有的文本，打开不同笔记在特定顺序下的解读。当找到了合适的顺序，我们也就找到了合适的大纲，这时候再写手稿可以轻松很多。我觉得你甚至都可以用这个方法来开始一个新项目 :3
 
-正因如此，我也乐得采用 #local("/persons/jonsterling", text: "Jon Sterling") 关于#external("https://www.forester-notes.org/tfmt-000V/")[「常青林」]的说法来形容常青笔记的组合，并用「常青树」来指代常青笔记~~（小小的文字游戏）~~。我认为他开发的 #external("https://forester-notes.org")[Forester] 这套工具的理念非常好，本网站所采用的 #external("https://kodama-community.github.io/")[Kodama] 便大量借鉴了它的设计。
+正因如此，我也乐得采用 #local("/persons/jonsterling", text: "Jon Sterling") 关于#external("https://www.forester-notes.org/tfmt-000V/")[「常青林」]的说法来形容常青笔记的组合，并用「常青树」来指代常青笔记~~（小小的文字游戏）~~。我认为他开发的 #local("/projects/forester", text: "forester") 这套工具的理念非常好，本网站所采用的 #local("/projects/kodama", text: "Kodama") 便大量借鉴了它的设计。
 
 不过，即使是以常青笔记的方式去写作，笔记也常仍是强烈私人性质的事情。
 

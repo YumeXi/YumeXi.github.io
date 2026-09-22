@@ -18,5 +18,5 @@ status: flying
 
 # 参考
 
-- [Forester](http://www.forester-notes.org/)
+- [Forester](/trees/projects/forester.md)
 - [Obsidian](https://obsidian.md/)
