@@ -8,4 +8,4 @@ taxon: Essays
 [-环境的 $\lambda$-演算](./0001-lambda-env.typst#:embed)
 [-](./0002-ideas-to-fly.md#:embed)
 [-](./0004-spaced-repetition.md#:embed)
-[-](./0005-evergreen-notes.md#:embed)
+[-](./0005-evergreen-notes.typst#:embed)
