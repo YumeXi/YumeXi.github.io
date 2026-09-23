@@ -35,7 +35,7 @@
 #subtree(taxon: "Context", title: "读者可能想知道的背景信息")[
   - #external("https://blog.colinbreck.com/i-dont-want-to-read-what-you-didnt-write/")[*I Don’t Want to Read What You Didn’t Write*]
 
-  - #external("https://bcantrill.dtrace.org/2026/09/05/the-revolt-of-the-reader/")[*The revolt of the reader*]]
+  - #external("https://bcantrill.dtrace.org/2026/09/05/the-revolt-of-the-reader/")[*The Revolt of The Reader*]]
 
 垃圾信息并非大语言模型所独创，且大语言模型同样具有输出优质信息的能力，但现实是这抵不过垃圾输出泛滥的速度。
 

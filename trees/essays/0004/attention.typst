@@ -1,0 +1,31 @@
+#import "../../_lib/kodama.typ": *
+
+#metadata((
+  "title": "注意力",
+  "page-title": "注意力",
+  date: "2026 年 9 月 23 日",
+  taxon: "Remark",
+  asref: true
+))
+
+数字时代的注意力无疑是一种稀缺物资，笔者粗略地将其分为主动注意力和被动注意力。这只是因为在笔者心里它们略有区别，并非好坏之分，并且也可以互相转化。
+
+#definition(taxon: "Def", title: "被动注意力", slug: "passive-attention", numbering: true, open: true)[
+被动注意力指的是以被动的方式获取信息源/在缺乏主动性探索的情况下接受信息。特别以社交媒体的自动推荐，视频平台的推流等形式出现。]
+
+被动注意力看似不可量化，实则往往早就被商家争相竞拍。只要平台的推荐算法让你对厂商哪怕只是留下了一次点击，产生了转瞬即逝的兴趣，都是潜在的胜利。
+
+#definition(taxon: "Def", title: "主动注意力", slug: "active-attention", numbering: true, open: true)[
+主动注意力是指在主动探索的信息源下获取信息（而非被动的推送-选择）。可以注意到，我们可能出于兴趣而订阅原来被推流的某频道，并持续关注或利用搜索引擎来获取相关信息，这时候被动注意力就转换为了主动注意力。
+
+在搜索引擎尚未非常成熟的年代，互联网充满了各种兔子洞。尽管现代商业平台往往将它们掩盖，但是你还是可以跳进它们。无论是发现博客并利用 Feeds(RSS) 订阅，还是更进一步地去了解被推流的视频/文章背后的信息，或是重新思考它们本身，都是充满勇气的探索。]
+
+#remark(title: "注意力之死", numbering: true, slug: "the-death-of-attention", open: true)[
+但也正因主动注意力需要从被动注意力转化，倘若一个人的被动注意力完全被推荐算法蚕食——换句话说，算法推什么他偏好的就看什么——他的主动注意力也会因而僵死，这就是我们需要多样化信息来源的理由。
+]
+
+#remark(open: false, catalog: false)[*TODO*: 关于信息回声室/茧房的讨论。]
+
+#subtree(taxon: "Context", numbering: true, title: "读者可能想知道的背景信息")[
+- #external("https://alicegg.tech/2026/09/21/attention")[Attention is All You Have]
+]
