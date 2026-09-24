@@ -3,5 +3,6 @@
 .DS_Store
 
 .claude
-publish
+publish/*
+!publish/_headers
 .wrangler
