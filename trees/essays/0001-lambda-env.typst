@@ -17,18 +17,18 @@
   status: "draft",
 ))
 
-#let (example, ..) = frames(example: ("Example", ))
 #show: frame-style(styles.boxy)
 
 #let l_c = $lambda$ + "-calculus"
 // λ-抽象
 #let l_a = $lambda$ + "-抽象"
 
-= 摘要
+#subtree(title: "摘要", slug: "0001-summary")[
+绝大部分 #l_c 的直接变体使用代换来表示值的代入行为，然而它并不贴合人们使用环境或符号表的实践。除此之外，对重复变量名的简化处理（Barendregt's Convention）虽然在纸面证明上可以接受，但是却不能优雅地用于机械化证明，还有烦人的#[代换引理]。本文比较两种不同的基于的环境的形式化方法，一种依然依赖代换，但可以更好的建模复杂的环境；另一种完全消除了代换，并且被证明完全适于建模 STLC，同时还有大步语义和较为简单的机械化证明。本文所述的两种方法都支持（并且不依赖于）一等环境。最后，本文尝试结合这两种方法的优点。]
 
-绝大部分 #l_c 的直接变体使用代换来表示值的代入行为，然而它并不贴合人们使用环境或符号表的实践。除此之外，对重复变量名的简化处理（Barendregt's Convention）虽然在纸面证明上可以接受，但是却不能优雅地用于机械化证明，还有烦人的#[代换引理]。本文比较两种不同的基于的环境的形式化方法，一种依然依赖代换，但可以更好的建模复杂的环境；另一种完全消除了代换，并且被证明完全适于建模 STLC，同时还有大步语义和较为简单的机械化证明。本文所述的两种方法都支持（并且不依赖于）一等环境。最后，本文尝试结合这两种方法的优点。
+#subtree(taxon: "Part I", title: "λE-Calculus", slug: "lambdaE-calculus")[
 
-= Part I: $lambda_E$-calculus
+$lambda_E$-演算适于机械化证明，并被证明至少可用于建模 STLC（再加一些小拓展）。
 
 #let rules = (..rules) => {
   return rules.pos().join(linebreak())
@@ -64,7 +64,7 @@
   ]
 ]
 
-总体上来说，这里给出的语义与原论文没有太大差异，介绍如下：
+总体上来说，这里给出的语义与 #external("https://doi.org/10.1145/3689800")[\[1\]] 没有太大差异，介绍如下：
 - $"Types"$. 这里并没有给出任何类型，但是原论文的定型规则实际上支持了一个简单类型（因而也更受限）的 #l_c。 我们选择这么做是为了简洁明了（引入简单类型很容易），并且为后文的演算做准备。
 - $"Environments"$. 尽管原论文的环境同时支持 de Brujin index 和具名变量，并且更侧重于 de Brujin index，使其类似于元组与记录的混合体。但是我们选择反其道而行之，从中略去 de Brujin index，让它更贴近现实模型（（实际上与现实语言依然有一定距离））。这也与后文另一种演算的方案更加一致。
 - $"Values"$. (1.) 包含了整数，环境和闭包。因为变量具名通常是有意义的，并且直接支持环境，因此闭包不需要也不支持 $alpha"-renaming"$。(2.) 实际上与 $"Terms"$ 有语法重合（可通过取消语法导向的合并操作而使用语义函数，引入行多态来避免）。
@@ -77,12 +77,43 @@
 
 现在让我们观察一些在经典 #l_c 中的代换不那么优雅的例子：
 
-#subtree(taxon: "Example", numbering: true, title: "免捕获代换", slug: "capture-avoided-subst")[
+#subtree(taxon: "Example", title: "免捕获代换", slug: "0001-capture-avoided-subst", open: true, numbering: true)[
 
 - 在经典演算中，考虑内层 #l_a 的绑定变量与外层抽象上的绑定变量同名，例如：
-$ lambda x.lambda y. x $
+$ lambda x.lambda y. x y $
   - 此时应用 $y$，有 $(lambda x.lambda y.x y) -> (lambda y.x y)[x := y]$，朴素代换将会得到 $lambda y.y y$ ——不难发现这肯定脱离了我们的预期。要避免这种代换，需要无意义却有意义的 $alpha$-重命名 规则，使 $lambda y.x y attach(eq.triple, t: alpha) lambda z.x z$。在符号名称有意义的时候，这样做既不简单（需要发现绑定变量在更内层的每一次出现），也不效率（在代换中很可能会有大量这样的操作产生），并且产生语法噪音。
 
-- 相比之下，$lambda_E$-演算区分了抽象的语法结构和对象（亦即闭包）。此时应用只是 $ e tack.r (lambda x. lambda y.x y) y |->* ⟨(e, { x = y }, lambda y.x y)⟩ $
-  易验证此时应用 y 不会得到形如 #l_c 中 $lambda y.y y$ 的错误产物。
-]]
+- 相比之下，$lambda_E$-演算区分了抽象的语法结构和对象（亦即闭包）。此时应用只是 $ e tack.r (lambda x. lambda y.x y) y |attach(arrow.r.bar, tr: "*") ⟨(e, { x = y }), lambda y.x y⟩ $
+  易验证此时应用值不会得到朴素代换规约 $lambda y.y y$ 后的错误产物。
+
+- 于是我们不仅得以避免 Barendregt's Convention，还给函数相关求值带来了更清晰的语义。
+]
+
+#example(title: "延迟代换", slug: "0002-delayed-subst", numbering: true, open: true)[
+
+- 经典演算中，代换会全量代换变量（无论求值与否），譬如 $ (lambda x. x x x)[x := T] |-> T T T$，而 $lambda_E$-演算的变量只在实际规约时求值。在数学建模上，这可能区别不大；但是在现实世界中，代换作为元操作的开销会在运行时上凸显出来，而略去一等环境的$lambda_E$-演算则更接近现实语言的行为。
+]]]
+
+#subtree(taxon: "Part II", title: "Vau-Calculus", slug: "vau-calculus")[
+
+Vau 演算的元表达力更强，通过显式控制参数（i.e. 绑定变量）的求值时机，与一等环境的调用间隐式传递（与 $lambda_E$-演算相反）与显化。
+
+由于 Vau 演算在 #external("https://www.wpi.edu/Pubs/ETD/Available/etd-090110-124904/")[\[2\]] 有诸多变体，我们只选择与前述演算最相近的纯演算，具有副作用的 Vau 演算则有待日后详述。
+
+#definition(title: "fe-Calculus", slug: "vaue-calculus")[
+Syntax:
+  $
+    d & ∈ "PrimitiveData" \
+    o & ∈ "PrimitiveOperatives" \
+    s & ∈ "Symbols" ("with total ordering" ≤) \
+    B & ::= s ← T & ("Bindings") \
+    e & ::= ⟨B^*⟩ & ("Environments") \
+    S & ::= d | o | e | "#ignore" | ()  | ⟨"operative" T T T T⟩ & ("Self-evaluating terms") \
+    A & ::= ["eval" T T ] | ["combine" T T T ] & ("Active terms") \
+    T & ::= S | s | (T . T ) | A | ⟨"applicative" T⟩ & ("Terms") \
+    V & ∈ { T | T "中任一在操作子或环境中的 active subterm"} & ("Values") \
+    & "绑定由符号排序；环境中无重复符号绑定"
+  $
+]
+
+]
