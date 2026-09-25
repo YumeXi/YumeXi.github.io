@@ -10,3 +10,4 @@ taxon: Essays
 [-](./0004-spaced-repetition.md#:embed)
 [-](./0005-evergreen-notes.typst#:embed)
 [-](./0006-note-naming-and-permalinks.typst#:embed)
+[-](./0007-write-while-learning.typst#:embed)

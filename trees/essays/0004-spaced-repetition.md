@@ -2,6 +2,7 @@
 title: 间隔重复系统
 page-title: 间隔重复系统
 date: 2026 年 9 月 21 日
+last_edition: 2026 年 9 月 23 日
 author: [燎原火魄](../about/hopo/index.md)
 status: comment
 asref: true
