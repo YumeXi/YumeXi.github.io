@@ -1,5 +1,7 @@
 #import "../../_lib/kodama.typ": *
 
+#show: kodama
+
 #metadata((
   "title": "注意力",
   "page-title": "注意力",

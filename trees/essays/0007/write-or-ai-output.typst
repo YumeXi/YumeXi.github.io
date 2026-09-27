@@ -11,7 +11,7 @@
 
 在学习中，写作为记录而存在，但为思考而服务。
 
-#subtree(taxon: "推论", numbering: true)[
+#subtree(taxon: "Infer", numbering: true)[
 人工智能不能（至少不总是）替你思考。
 
 #proof(title: "为推论 1 作证")[

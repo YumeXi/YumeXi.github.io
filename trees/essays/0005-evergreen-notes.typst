@@ -1,10 +1,13 @@
 #import "../_lib/kodama.typ": *
+#import "../persons.typ": *
+
+#show: kodama
 
 #metadata((
   "title": "常青笔记",
   "page-title": "常青笔记",
   date: "2026 年 9 月 22 日",
-  author: local("/about/hopo/index", text: "燎原火魄"),
+  author: hopo,
   status: "draft",
   asref: true
 ))
