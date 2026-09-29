@@ -1,0 +1,18 @@
+#import "../_lib/kodama.typ": *
+
+#import "../entities.typ": *
+
+#metadata((
+  "title": "作为思考工具的软件",
+  "page-title": "作为思考工具的软件",
+  date: "2026 年 9 月 29 日",
+  author: hopo,
+  status: "comment",
+  asref: true
+))
+
+阅读了 #inkswitch 提出的理念，我愿称其构成的软件整体为「灵媒」。这是在笔者的无意识中溜出来的词，我想灵代表人类思维的活性与灵感，媒则应允原文中的「dynamic medium」，是媒介罢。而灵感本身就是捉摸不透的东西，大抵也与 dynamic 遥相呼应了。
+
+寻根溯源，虽然 #inkswitch 着重强调了以下几条方向#footnote[作为小小的私心，排列顺序凸显的是笔者的关心优先度。]（或者说理念），但它们其实早有例可援：
+
+#embed("./0008/malleable-software", numbering: true)[可塑软件]

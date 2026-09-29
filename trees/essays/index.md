@@ -11,3 +11,4 @@ taxon: Essays
 [-](./0005-evergreen-notes.typst#:embed)
 [-](./0006-note-naming-and-permalinks.typst#:embed)
 [-](./0007-write-while-learning.typst#:embed)
+[-](./0008-thought-tools.typst#:embed)
