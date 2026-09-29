@@ -1,5 +1,5 @@
 #import "../_lib/kodama.typ": *
-#import "../persons.typ": *
+#import "../entities.typ": *
 
 #show: kodama
 

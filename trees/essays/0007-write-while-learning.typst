@@ -1,5 +1,7 @@
 #import "../_lib/kodama.typ": *
 
+#show: kodama
+
 #metadata((
   "title": "以写作为伴学习",
   "page-title": "以写作为伴学习",
