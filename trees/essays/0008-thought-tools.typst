@@ -16,3 +16,5 @@
 寻根溯源，虽然 #inkswitch 着重强调了以下几条方向#footnote[作为小小的私心，排列顺序凸显的是笔者的关心优先度。]（或者说理念），但它们其实早有例可援：
 
 #embed("./0008/malleable-software", numbering: true)[可塑软件]
+
+#embed("./0008/local-first", numbering: true)[本地优先]
