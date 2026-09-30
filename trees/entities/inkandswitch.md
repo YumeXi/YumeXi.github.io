@@ -2,7 +2,7 @@
 title: InK & Switch
 page-title: Ink & Switch
 asref: true
-homepage: [https://www.inkandswitch.com/](https://www.inkandswitch.com/)
+homepage: [inkandswitch.com/](https://www.inkandswitch.com/)
 taxon: Lab
 ---
 
